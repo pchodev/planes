@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cu0xk85nd717w"]
+
+[ext_resource type="Script" uid="uid://7f5rw8xpvlw" path="res://scripts/bullet_basic.gd" id="1_4x6ae"]
+[ext_resource type="Texture2D" uid="uid://crppm0mivblct" path="res://imports/tiles_packed.png" id="1_wn7i0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4x6ae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eagm"]
+atlas = ExtResource("1_wn7i0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywl3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eagm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet_Basic" type="RigidBody3D" unique_id=1154093673]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_4x6ae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1866363195]
+transform = Transform3D(0.3199999, 0, 0, 0, -1.39876395e-08, 0.3199999, 0, -0.3199999, -1.39876395e-08, 0, 0, -0.32118466)
+shape = SubResource("CapsuleShape3D_4x6ae")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CollisionShape3D" unique_id=1467303260]
+transform = Transform3D(12.500004, 0, 0, 0, 12.500004, 5.684342e-14, 0, -5.684342e-14, 12.500004, 0, 0, 0)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ywl3n")

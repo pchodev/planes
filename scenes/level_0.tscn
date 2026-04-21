@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://qe31lh7df275"]
+
+[ext_resource type="PackedScene" uid="uid://bdv53nvawh5yt" path="res://scenes/player.tscn" id="1_7wnc2"]
+[ext_resource type="Script" uid="uid://c3f26jmo3n1yp" path="res://scripts/game_manager_level_0.gd" id="1_rerym"]
+[ext_resource type="PackedScene" uid="uid://cu0xk85nd717w" path="res://scenes/bullet_basic.tscn" id="2_5uqbp"]
+[ext_resource type="PackedScene" uid="uid://qf5wk3lwhk1r" path="res://scenes/world_wall.tscn" id="4_uijja"]
+
+[node name="Node3D" type="Node3D" unique_id=254052850]
+script = ExtResource("1_rerym")
+player_basic_bullet = ExtResource("2_5uqbp")
+
+[node name="Player" parent="." unique_id=1804798511 instance=ExtResource("1_7wnc2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=297804605]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 19, 0)
+
+[node name="WorldWall" parent="." unique_id=1515268184 instance=ExtResource("4_uijja")]
+transform = Transform3D(13, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[connection signal="bullet_fired" from="Player" to="." method="_on_player_bullet_fired"]
