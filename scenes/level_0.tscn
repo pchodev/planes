@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c3f26jmo3n1yp" path="res://scripts/game_manager_level_0.gd" id="1_rerym"]
 [ext_resource type="PackedScene" uid="uid://cu0xk85nd717w" path="res://scenes/bullet_basic.tscn" id="2_5uqbp"]
 [ext_resource type="PackedScene" uid="uid://qf5wk3lwhk1r" path="res://scenes/world_wall.tscn" id="4_uijja"]
+[ext_resource type="PackedScene" uid="uid://b0bp5cdrfpuvr" path="res://scenes/enemy_0.tscn" id="5_5nv5w"]
 
 [node name="Node3D" type="Node3D" unique_id=254052850]
 script = ExtResource("1_rerym")
@@ -11,11 +12,24 @@ player_basic_bullet = ExtResource("2_5uqbp")
 
 [node name="Player" parent="." unique_id=1804798511 instance=ExtResource("1_7wnc2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+Speed = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=297804605]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 19, 0)
 
-[node name="WorldWall" parent="." unique_id=1515268184 instance=ExtResource("4_uijja")]
-transform = Transform3D(13, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+[node name="WorldWallSouth" parent="." unique_id=1515268184 instance=ExtResource("4_uijja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="WorldWallNorth" parent="." unique_id=1770839044 instance=ExtResource("4_uijja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="WorldWallEast" parent="." unique_id=1337188541 instance=ExtResource("4_uijja")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 0, 0)
+
+[node name="WorldWallWest" parent="." unique_id=1805897880 instance=ExtResource("4_uijja")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11, 0, 0)
+
+[node name="RigidBody3D" parent="." unique_id=1250732941 instance=ExtResource("5_5nv5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [connection signal="bullet_fired" from="Player" to="." method="_on_player_bullet_fired"]

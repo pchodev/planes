@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b0bp5cdrfpuvr"]
+
+[ext_resource type="Script" uid="uid://b58t5li40kn2r" path="res://scenes/enemy_0.gd" id="1_5m27w"]
+[ext_resource type="Texture2D" uid="uid://1m035lwnwx01" path="res://imports/ships_packed.png" id="1_grx4u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2q8kt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hnua"]
+atlas = ExtResource("1_grx4u")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yy5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hnua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area3D" type="Area3D" unique_id=1151286493]
+script = ExtResource("1_5m27w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=703121715]
+shape = SubResource("SphereShape3D_2q8kt")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=159476986]
+transform = Transform3D(-6, -9.0597484e-07, -3.9601416e-14, 0, -2.6226832e-07, 6, -9.0597484e-07, 6, 2.6226832e-07, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_1yy5j")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1378297847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.54075605)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

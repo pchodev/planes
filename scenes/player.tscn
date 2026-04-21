@@ -22,7 +22,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody3D" unique_id=1804798511]
-collision_mask = 0
+collision_mask = 3
 script = ExtResource("1_qhqgy")
 bullet_basic_scene = ExtResource("2_dqkch")
 
@@ -32,8 +32,9 @@ shape = SubResource("SphereShape3D_g2els")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=815270239]
 transform = Transform3D(6, 0, 0, 0, -2.6226832e-07, 6, 0, -6, -2.6226832e-07, 0, 0, 0)
 shaded = true
+alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dqkch")
 
 [node name="BulletSpawn" type="Marker3D" parent="." unique_id=1875220844]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.71807146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5887624)
