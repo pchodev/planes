@@ -12,7 +12,7 @@ script = ExtResource("1_rerym")
 player_basic_bullet = ExtResource("2_5uqbp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=962943501]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 30, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 247, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1804798511 instance=ExtResource("1_7wnc2")]

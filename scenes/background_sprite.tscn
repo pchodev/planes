@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4oourriduvlu"]
 
-[ext_resource type="PackedScene" uid="uid://djkw8e8cfr0r3" path="res://scenes/background.tscn" id="1_pa2kg"]
+[ext_resource type="PackedScene" uid="uid://djkw8e8cfr0r3" path="res://scenes/background_0_tilesetlayer.tscn" id="1_pa2kg"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8mp04"]
 viewport_path = NodePath("SubViewport")
@@ -16,4 +16,4 @@ texture = SubResource("ViewportTexture_8mp04")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=2110596944]
 size = Vector2i(640, 864)
 
-[node name="TileMapLayer" parent="SubViewport" unique_id=1105069108 instance=ExtResource("1_pa2kg")]
+[node name="Background0" parent="SubViewport" unique_id=1105069108 instance=ExtResource("1_pa2kg")]
