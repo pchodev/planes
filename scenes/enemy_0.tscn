@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0bp5cdrfpuvr"]
 
-[ext_resource type="Script" uid="uid://b58t5li40kn2r" path="res://scenes/enemy_0.gd" id="1_5m27w"]
+[ext_resource type="Script" uid="uid://b58t5li40kn2r" path="res://scripts/enemy_0.gd" id="1_5m27w"]
 [ext_resource type="Texture2D" uid="uid://1m035lwnwx01" path="res://imports/ships_packed.png" id="1_grx4u"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2q8kt"]
@@ -20,7 +20,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area3D" type="Area3D" unique_id=1151286493]
+[node name="Enemy0" type="Area3D" unique_id=1151286493]
 script = ExtResource("1_5m27w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=703121715]

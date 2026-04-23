@@ -20,7 +20,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area3D" type="Area3D" unique_id=1582601949]
+[node name="BulletBasic" type="Area3D" unique_id=1582601949]
 script = ExtResource("1_4x6ae")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1866363195]
@@ -32,3 +32,5 @@ transform = Transform3D(4, 0, 0, 0, -1.7484557e-07, 4, 0, -4, -1.7484557e-07, 0,
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ywl3n")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

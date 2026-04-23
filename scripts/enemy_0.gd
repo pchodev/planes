@@ -1,17 +1,21 @@
 extends Area3D
 
+@export var health = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("enemies")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	pass
 
+func take_damage(damage: int) -> void:
+	health -= damage
+	if health <= 0:
+		die()
 
-func _on_area_entered(area: Area3D) -> void:
-	area.queue_free()
-	pass # Replace with function body.
+func die() -> void:
+	queue_free()
